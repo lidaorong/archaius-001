@@ -58,6 +58,7 @@ public class DynamicURLConfigurationTestWithFileURL {
         writeList.add("12312");
         writeList.add("123213");
         config.setProperty("sample.domain", "google,yahoo");
+        System.out.println("value is :" + config.getProperty("test.host"));
         Assert.assertEquals(writeList, config.getProperty("test.host"));
         
 
@@ -73,6 +74,7 @@ public class DynamicURLConfigurationTestWithFileURL {
     private void populateFile(File temporary, String prop1, String prop2) throws IOException {
 
         String s = prop1 + "\n" + prop2 + "\n";
+        System.out.println("file url value is :" + s);
         byte data[] = s.getBytes("UTF-8");
         OutputStream out = null;
         try {
